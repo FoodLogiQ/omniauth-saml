@@ -20,6 +20,9 @@ module OmniAuth
 
         authn_request = Onelogin::Saml::Authrequest.new
         settings = Onelogin::Saml::Settings.new(options)
+        
+        puts options.inspect
+        puts settings.inspect        
 
         redirect(authn_request.create(settings, additional_params))
       end
@@ -31,6 +34,9 @@ module OmniAuth
 
         response = Onelogin::Saml::Response.new(request.params['SAMLResponse'], options)
         response.settings = Onelogin::Saml::Settings.new(options)
+
+        puts options.inspect
+        puts settings.inspect
 
         @name_id = response.name_id
         @attributes = response.attributes
