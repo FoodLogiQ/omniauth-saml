@@ -36,7 +36,7 @@ module OmniAuth
         response.settings = Onelogin::Saml::Settings.new(options)
 
         puts options.inspect
-        puts settings.inspect
+        puts response.settings.inspect
 
         @name_id = response.name_id
         @attributes = response.attributes
