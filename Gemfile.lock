@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-saml (1.1.8)
+    omniauth-saml (1.1.9)
       omniauth (~> 1.1)
       ruby-saml (~> 0.7.2)
 
