@@ -42,6 +42,12 @@ module OmniAuth
         @attributes = response.attributes
         @multiple_attributes = response.multiple_attributes
 
+        puts "Single Attributes"
+        puts response.attributes.inspect
+
+        puts "\nMultiple Attributes"
+        puts response.multiple_attributes.inspect
+
         if @name_id.nil? || @name_id.empty?
           raise OmniAuth::Strategies::SAML::ValidationError.new("SAML response missing 'name_id'")
         end
