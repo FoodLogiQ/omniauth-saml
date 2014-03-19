@@ -40,6 +40,7 @@ module OmniAuth
 
         @name_id = response.name_id
         @attributes = response.attributes
+        @multiple_attributes = response.multiple_attributes
 
         if @name_id.nil? || @name_id.empty?
           raise OmniAuth::Strategies::SAML::ValidationError.new("SAML response missing 'name_id'")
@@ -79,7 +80,7 @@ module OmniAuth
         }
       end
 
-      extra { { :raw_info => @attributes } }
+      extra { { :raw_info => @attributes, :raw_info_multiple => @multiple_attributes } }
     end
   end
 end
